@@ -11,29 +11,22 @@ from langchain import ConversationChain
 # Load environment variables
 load_dotenv(find_dotenv())
 
-# --------------------------------------------------------------
 # LLMs: Get predictions from a language model
-# --------------------------------------------------------------
 
 llm = OpenAI(model_name="text-davinci-003")
 prompt = "Write a poem about python and ai"
 print(llm(prompt))
 
-
-# --------------------------------------------------------------
 # Prompt Templates: Manage prompts for LLMs
-# --------------------------------------------------------------
 
-prompt = PromptTemplate(
+""" prompt = PromptTemplate(
     input_variables=["product"],
     template="What is a good name for a company that makes {product}?",
 )
 
 prompt.format(product="Smart Apps using Large Language Models (LLMs)")
 
-# --------------------------------------------------------------
 # Chains: Combine LLMs and prompts in multi-step workflows
-# --------------------------------------------------------------
 
 llm = OpenAI()
 prompt = PromptTemplate(
@@ -42,15 +35,12 @@ prompt = PromptTemplate(
 )
 
 chain = LLMChain(llm=llm, prompt=prompt)
-print(chain.run("AI Chatbots for Dental Offices"))
+print(chain.run("AI Chatbots for Dental Offices")) """
 
 
-# --------------------------------------------------------------
 # Agents: Dynamically Call Chains Based on User Input
-# --------------------------------------------------------------
 
-
-llm = OpenAI()
+""" llm = OpenAI()
 
 get_all_tool_names()
 tools = load_tools(["wikipedia", "llm-math"], llm=llm)
@@ -64,13 +54,11 @@ agent = initialize_agent(
 result = agent.run(
     "In what year was python released and who is the original creator? Multiply the year by 3"
 )
-print(result)
+print(result) """
 
 
-# --------------------------------------------------------------
 # Memory: Add State to Chains and Agents
-# --------------------------------------------------------------
-
+""" 
 llm = OpenAI()
 conversation = ConversationChain(llm=llm, verbose=True)
 
@@ -81,3 +69,4 @@ output = conversation.predict(
     input="I'm doing well! Just having a conversation with an AI."
 )
 print(output)
+ """
